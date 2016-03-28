@@ -1,6 +1,6 @@
 {
-  "name": "Sunglass",
-  "description": "A mixin and functions library for Sass",
+  "name": "sunglass-core",
+  "description": "A functions library for Sass",
   "tags": [
     "library",
     "mixins",

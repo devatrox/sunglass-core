@@ -1,7 +1,7 @@
 {
-  "name": "Sunglass",
-  "description": "A mixin and functions library for Sass",
-  "version": "4.0.0",
+  "name": "sunglass-core",
+  "description": "A functions library for Sass",
+  "version": "1.0.0",
   "authors": [
     "Jason Nickel <mail@devatrox.de>"
   ],
@@ -24,9 +24,8 @@
     "bower.json",
     "package.json",
     "node_modules",
-    "TODO.md",
     "sache.json"
   ],
-  "homepage": "https://github.com/devatrox/Sunglass",
+  "homepage": "https://github.com/devatrox/sunglass-core",
   "license": "MIT"
 }
