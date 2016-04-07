@@ -12,7 +12,7 @@
     "functions"
   ],
   "main": [
-    "assets/_noconflict.scss"
+    "_sunglass-noconflict.scss"
   ],
   "ignore": [
     "sassdoc",
