@@ -43,4 +43,14 @@
 
     @include assert-equal(type-of(str-count($base, 'a')), number);
   }
+
+  @include test('str-split [function]') {
+    $base: 'abc def abc';
+
+    @include assert-equal(str-split($base), ('abc def abc'));
+
+    @include assert-equal(str-split($base, ' '), ('abc', 'def', 'abc'));
+
+    @include assert-equal(type-of(str-split($base, ' ')), list);
+  }
 }

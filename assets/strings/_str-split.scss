@@ -1,0 +1,39 @@
+@function sg-str-split($string, $separator: false) {
+  $length: str-length($string);
+  $list: ();
+
+  @if $separator == false {
+    $list: append($list, $string, comma);
+  }
+  @else if $separator == '' {
+    @while $length > 0 {
+      $list: append($list, str-slice($string, 0, 1), comma);
+      $string: str-slice($string, 2);
+    }
+  }
+  @else {
+    @if sg-str-contains($string, $separator) {
+      $l: true;
+      $c: sg-str-count($string, $separator);
+
+      @for $i from 1 through $c {
+
+        $start: str-index($string, $separator);
+        $end: $start + str-length($separator) - 1;
+
+        @if $start != 1 {
+          $list: append($list, str-slice($string, 0, $start - 1), comma);
+          $string: str-slice($string, $end + 1, str-length($string));
+        }
+        @else {
+          $string: str-slice($string, $end + 1, str-length($string));
+        }
+      }
+      @if str-length($string) > 0 {
+        $list: append($list, str-slice($string, 0), comma);
+      }
+    }
+  }
+
+  @return $list;
+}

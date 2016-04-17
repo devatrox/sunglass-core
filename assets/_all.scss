@@ -87,3 +87,7 @@
 @function str-count($string, $substring) {
   @return sg-str-count($string, $substring);
 }
+
+@function str-split($string, $separator: false) {
+  @return sg-str-split($string, $separator);
+}
