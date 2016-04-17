@@ -1,6 +1,6 @@
 ![](http://cdn.devatrox.de/img/sunglass-logo.png)
 
-[![Build Status](https://travis-ci.org/devatrox/sunglass-core.png)](https://travis-ci.org/devatrox/sunglass-core) [![devDependency Status](https://david-dm.org/devatrox/sunglass-core/dev-status.png)](https://david-dm.org/devatrox/sunglass-core#info=devDependencies)
+[![Build Status](https://travis-ci.org/devatrox/sunglass-core.png?branch=master)](https://travis-ci.org/devatrox/sunglass-core) [![devDependency Status](https://david-dm.org/devatrox/sunglass-core/dev-status.png)](https://david-dm.org/devatrox/sunglass-core#info=devDependencies)
 
 **A functions library for Sass. The successor to Sunglass**
 
