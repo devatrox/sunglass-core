@@ -32,20 +32,28 @@
   @return sg-contains($list, $test);
 }
 
+@function includes($list, $test) {
+  @return sg-includes($list, $test);
+}
+
 @function each($function, $list, $args...) {
-  @return sg-each($function, $list, $args);
+  @return sg-each($function, $list, $args...);
+}
+
+@function walk($function, $list, $args...) {
+  @return sg-walk($function, $list, $args...);
 }
 
 @function without($list, $values...) {
-  @return sg-without($list, $values);
+  @return sg-without($list, $values...);
+}
+
+@function difference($list, $values...) {
+  @return sg-difference($list, $values...);
 }
 
 @function compact($list) {
   @return sg-compact($list);
-}
-
-@function str-join($list, $separator: ',') {
-  @return sg-str-join($list, $separator);
 }
 
 // Numbers
@@ -76,8 +84,8 @@
 
 // Strings
 
-@function str-concat($strings...) {
-  @return sg-str-concat($strings);
+@function str-join($list, $separator: ',') {
+  @return sg-str-join($list, $separator);
 }
 
 @function str-contains($string, $substr, $start: 0) {

@@ -20,13 +20,19 @@
   $separator: list-separator($list);
   $newlist: ();
 
-  @if type-of($list) != list { @error '#{$list} is not a list'; }
-  @if function-exists($function) == false { @error 'Function #{$function}() does not exist!'; }
+  @if not function-exists($function) {
+    @error 'Function #{$function}() does not exist!';
+  }
 
   @each $item in $list {
-    $item: call($function, $item, $args);
-    $newlist: append($newlist, $item, $separator);
+    $newlist: append($newlist, call($function, $item, $args...), $separator);
   }
 
   @return $newlist;
+}
+
+/// @name walk
+/// @alias each
+@function sg-walk($list, $function, $args...) {
+  @return sg-each($list, $function, $args...);
 }
