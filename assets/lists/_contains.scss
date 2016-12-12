@@ -17,12 +17,7 @@
 ///  // true
 
 @function sg-contains($list, $value) {
-  @if index($list, $value) {
-    @return true;
-  }
-  @else {
-    @return false;
-  }
+  @return if(index($list, $value), true, false);
 }
 
 /// @name includes

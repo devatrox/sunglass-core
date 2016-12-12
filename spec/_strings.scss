@@ -1,15 +1,17 @@
 @include test-module('Strings') {
 
-  @include test('str-concat [function]') {
-    $base: 'a';
+  @include test('str-join [function]') {
+    $base: ('a', 'b', 'c');
 
-    @include assert-equal(str-concat($base, 'b'), 'ab');
+    @include assert-equal(str-join($base), 'a,b,c');
 
-    @include assert-equal(str-concat($base, 1), 'a1');
+    @include assert-equal(str-join($base, '+'), 'a+b+c');
 
-    @include assert-equal(str-concat($base, 'b', 'c'), 'abc');
+    @include assert-equal(str-join($base, ' '), 'a b c');
 
-    @include assert-equal(type-of(str-concat($base, 'b')), string);
+    @include assert-equal(str-join($base, ''), 'abc');
+
+    @include assert-equal(type-of(str-join($base, '+')), string);
   }
 
   @include test('str-contains [function]') {
