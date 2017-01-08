@@ -17,18 +17,20 @@
 ///  // ('xa', 'xb', 'xc')
 
 @function sg-each($list, $function, $args...) {
-  $separator: list-separator($list);
-  $newlist: ();
+  $listSeparator: list-separator($list);
+  $argSeparator: list-separator($args);
+  $results: ();
 
   @if not function-exists($function) {
     @error 'Function #{$function}() does not exist!';
   }
 
   @each $item in $list {
-    $newlist: append($newlist, call($function, $item, $args...), $separator);
+    $newArgs: join(append((), $item, $argSeparator), $args, $argSeparator);
+    $results: append($results, call($function, $newArgs...), $listSeparator);
   }
 
-  @return $newlist;
+  @return $results;
 }
 
 /// @name walk
