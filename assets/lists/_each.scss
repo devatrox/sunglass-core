@@ -27,7 +27,8 @@
 
   @each $item in $list {
     $newArgs: join(append((), $item, $argSeparator), $args, $argSeparator);
-    $results: append($results, call($function, $newArgs...), $listSeparator);
+    $call: if(function-exists('get-function'), call(get-function($function), $newArgs...), call($function, $newArgs...));
+    $results: append($results, $call, $listSeparator);
   }
 
   @return $results;
