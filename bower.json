@@ -1,7 +1,7 @@
 {
   "name": "sunglass-core",
   "description": "A functions library for Sass",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "authors": [
     "Jason Nickel <mail@devatrox.de>"
   ],
