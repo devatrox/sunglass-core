@@ -82,6 +82,10 @@
   @return sg-strip-unit($number);
 }
 
+@function sign($numbers) {
+  @return sg-sign($numbers);
+}
+
 // Strings
 
 @function str-join($list, $separator: ',') {

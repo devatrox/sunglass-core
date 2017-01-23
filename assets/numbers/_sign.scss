@@ -1,0 +1,27 @@
+////
+/// @group Numbers
+/// @author Jason Nickel
+////
+
+/// Returns the sign of a number
+/// @name sign
+///
+/// @param {Number} $number
+///
+/// @return {Number}
+///
+/// @example
+///  sign(-3px)
+///  // -1
+
+@function sg-sign($number) {
+  @if type-of($number) != number {
+    @warn "#{$number} NaN";
+  }
+
+  @if $number == 0 {
+    @return sg-strip-unit($number);
+  }
+
+  @return if($number > 0, 1, -1);
+}

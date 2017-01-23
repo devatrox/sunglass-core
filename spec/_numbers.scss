@@ -49,6 +49,21 @@
     @include assert-equal(type-of(inverse(1)), number);
   }
 
+  @include test('sign [function]') {
+
+    @include assert-equal(sign(3px), 1);
+
+    @include assert-equal(sign(-3px), -1);
+
+    @include assert-equal(sign(0px), 0);
+
+    @include assert-equal(sign(0), 0);
+
+    @include assert-equal(type-of(sign(-4px)), number);
+
+    @include assert-true(unitless(sign(-4px)));
+  }
+
   @include test('polar-to-cartesian [function]') {
 
     @include assert-equal(polar-to-cartesian(1px, 0deg), (1px 0));
