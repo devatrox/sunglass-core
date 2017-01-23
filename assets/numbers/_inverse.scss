@@ -20,7 +20,7 @@
     $output: $number * -1;
   }
   @else {
-    @error '#{$numbers} NaN';
+    @error '#{$number} NaN';
   }
 
   @return $output;
